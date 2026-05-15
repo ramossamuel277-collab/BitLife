@@ -1,0 +1,19 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Abrir BitLife no Chrome",
+      "type": "pwa-chrome",
+      "request": "launch",
+      "file": "${workspaceFolder}/BitLife.html",
+      "webRoot": "${workspaceFolder}"
+    },
+    {
+      "name": "Abrir BitLife no Edge",
+      "type": "pwa-msedge",
+      "request": "launch",
+      "file": "${workspaceFolder}/BitLife.html",
+      "webRoot": "${workspaceFolder}"
+    }
+  ]
+}

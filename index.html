@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LifeSim</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="BitLife.css">
+</head>
+<body>
+  <main class="phone" aria-label="LifeSim">
+    <header class="app-header">
+      <button class="icon-button" id="newLifeButton" type="button" aria-label="Nova vida" title="Nova vida">+</button>
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">L</span>
+        <span>LifeSim</span>
+      </div>
+      <button class="icon-button" id="saveButton" type="button" aria-label="Salvar" title="Salvar">S</button>
+    </header>
+
+    <section class="identity">
+      <div class="avatar" id="avatar" aria-hidden="true">LS</div>
+      <div>
+        <p class="eyebrow" id="lifeStage">Nova vida</p>
+        <h1 id="characterName">Escolha uma historia</h1>
+        <p id="characterBio">Cada origem muda seus atributos, oportunidades e eventos.</p>
+      </div>
+    </section>
+
+    <section class="stats" aria-label="Atributos">
+      <article class="stat-card money">
+        <span>Patrimonio</span>
+        <strong id="moneyValue">R$ 0</strong>
+      </article>
+      <article class="stat-card">
+        <span>Idade</span>
+        <strong><span id="ageValue">0</span> anos</strong>
+      </article>
+    </section>
+
+    <section class="meters" aria-label="Indicadores de vida">
+      <div class="meter" data-stat="happiness">
+        <div><span>Felicidade</span><b id="happinessValue">50%</b></div>
+        <i><span id="happinessBar"></span></i>
+      </div>
+      <div class="meter" data-stat="health">
+        <div><span>Saude</span><b id="healthValue">100%</b></div>
+        <i><span id="healthBar"></span></i>
+      </div>
+      <div class="meter" data-stat="smarts">
+        <div><span>Inteligencia</span><b id="smartsValue">50%</b></div>
+        <i><span id="smartsBar"></span></i>
+      </div>
+      <div class="meter" data-stat="stress">
+        <div><span>Estresse</span><b id="stressValue">10%</b></div>
+        <i><span id="stressBar"></span></i>
+      </div>
+      <div class="meter" data-stat="relationships">
+        <div><span>Relacoes</span><b id="relationshipsValue">45%</b></div>
+        <i><span id="relationshipsBar"></span></i>
+      </div>
+    </section>
+
+    <nav class="tabs" aria-label="Secoes">
+      <button class="tab active" type="button" data-tab="life">Vida</button>
+      <button class="tab" type="button" data-tab="activities">Atividades</button>
+      <button class="tab" type="button" data-tab="career">Carreira</button>
+      <button class="tab" type="button" data-tab="assets">Bens</button>
+    </nav>
+
+    <section class="panel active" id="lifePanel" data-panel="life">
+      <div class="story-grid" id="storyGrid"></div>
+      <div class="choice-card hidden" id="choiceCard">
+        <p class="eyebrow" id="choiceChapter"></p>
+        <h2 id="choiceTitle"></h2>
+        <p id="choiceText"></p>
+        <div class="choice-actions" id="choiceActions"></div>
+      </div>
+      <ol class="timeline" id="timeline" aria-label="Historico de vida"></ol>
+    </section>
+
+    <section class="panel" id="activitiesPanel" data-panel="activities">
+      <div class="action-list" id="activityActions"></div>
+    </section>
+
+    <section class="panel" id="careerPanel" data-panel="career">
+      <div class="career-card">
+        <span class="eyebrow">Trabalho atual</span>
+        <h2 id="careerTitle">Nenhum</h2>
+        <p id="careerText">Cresca, estude e aceite oportunidades para abrir carreiras melhores.</p>
+      </div>
+      <div class="action-list" id="careerActions"></div>
+    </section>
+
+    <section class="panel" id="assetsPanel" data-panel="assets">
+      <div class="asset-row">
+        <span>Conta bancaria</span>
+        <strong id="bankValue">R$ 0</strong>
+      </div>
+      <div class="asset-row">
+        <span>Moradia</span>
+        <strong id="homeValue">Casa da familia</strong>
+      </div>
+      <div class="asset-row">
+        <span>Reputacao</span>
+        <strong id="reputationValue">Neutra</strong>
+      </div>
+      <div class="asset-row">
+        <span>Escolaridade</span>
+        <strong id="educationValue">Inicial</strong>
+      </div>
+    </section>
+
+    <footer class="bottom-bar">
+      <button class="age-button" id="ageButton" type="button">Envelhecer +1</button>
+    </footer>
+  </main>
+
+  <div class="toast hidden" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="BitLife.js"></script>
+</body>
+</html>
